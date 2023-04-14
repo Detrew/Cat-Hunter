@@ -8,7 +8,16 @@ A script made in python to see suspicious reverse shell processes and SSH connec
 
 ## Requisites
 Python3 (tested on: Python 3.11.2) &
-psutil (Execute setup.py on `pstuil/setup.py`)
+psutils
+
+### install psutils whitout pip
+```
+wget https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz -O psutil.tar.gz
+tar -xvf psutil.tar.gz 
+mv psutil-5.9.4 psutil
+cd psutil
+python3 setup.py install
+```
 
 ## Modes
 ### Passive Mode
