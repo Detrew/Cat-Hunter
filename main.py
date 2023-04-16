@@ -46,7 +46,8 @@ def passive():
                     if pinfo['pid'] not in found_pids:
                         found_pids.append(pinfo['pid'])
                         print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off}")
-                if 'sh' in pinfo['cmdline'] and '-bash' not in pinfo['cmdline'] and pinfo['username']:
+                cmdline = " ".join(pinfo['cmdline'])
+                if 'sh' in cmdline and pinfo['username']:
                     if pinfo['pid'] not in found_pids:
                         found_pids.append(pinfo['pid'])
                         print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off}")
