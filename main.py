@@ -45,6 +45,10 @@ def passive():
                     if pinfo['pid'] not in found_pids:
                         found_pids.append(pinfo['pid'])
                         print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off}")
+                if 'sh' in pinfo['cmdline'] and '-bash' not in pinfo['cmdline'] and pinfo['username']:
+                    if pinfo['pid'] not in found_pids:
+                        found_pids.append(pinfo['pid'])
+                        print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off}")
                 if 'sshd' in pinfo['name'] and '-bash' not in pinfo['cmdline'] and pinfo['username'] != 'sshd' and pinfo['username'] != 'root':
                     if pinfo['pid'] not in found_pids:
                         found_pids.append(pinfo['pid'])
@@ -70,6 +74,11 @@ def agressive():
                         found_pids.append(pinfo['pid'])
                         print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off} {purple}|{off}{fred} Killed!")
                         os.system(f"kill -9 {pinfo['pid']}")
+                if 'sh' in pinfo['cmdline'] and '-bash' not in pinfo['cmdline'] and pinfo['username']:
+                    if pinfo['pid'] not in found_pids:
+                        found_pids.append(pinfo['pid'])
+                        print(f"{fred}RevShell Found!{off} {purple}|{off} User: {red}{pinfo['username']}{off} {purple}|{off} Bin: {red}{pinfo['exe']}{off} {purple}|{off} PID: {red}{pinfo['pid']}{off} {purple}|{off}{fred} Killed!")
+                        os.system(f"kill -9 {pinfo['pid']}")
                 if 'sshd' in pinfo['name'] and '-bash' not in pinfo['cmdline'] and pinfo['username'] != 'sshd' and pinfo['username'] != 'root':
                     if pinfo['pid'] not in found_pids:
                         found_pids.append(pinfo['pid'])
@@ -86,8 +95,8 @@ def agressive():
                 print(f"{fgreen} Adios{off}")
                 exit()
 
+os.system("clear")
 print(f"{banner}")
-
 print(f"{green}[1]{off} Agressive Mode ({red}Kill Process{off})\n{green}[2]{off} Passive Mode ({red}Only Print Process{off})\n")
 op=input(f"{green}[+]{off} Select Mode: ")
 
