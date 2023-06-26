@@ -1,10 +1,13 @@
-![banner](https://cdn.discordapp.com/attachments/1041614683959988235/1096448793848852491/Screenshot_2023-04-14_11-55-09.png)
+![banner](https://media.discordapp.net/attachments/1025032964708499456/1122705309270544475/banner.png)
 <h1>Cat-Hunter</h1> 
 
-> :warning: In development
+> ⚠️ New Version 2.0!
 
 ## About
 A script made in python to see suspicious reverse shell processes and SSH connections Similar to Pspy
+## version 2.0!
+this new version brings a more accurate method of seeing the reverse shells and
+in addition to filtering and blacklisting connections that are taken for no reason
 
 ## Requisites
 Python3 (tested on: Python 3.11.2) &
